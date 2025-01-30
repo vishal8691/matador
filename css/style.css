@@ -1,0 +1,996 @@
+/*RESET CSSS*/
+*{
+    box-sizing: border-box;
+}
+body{
+margin: 0;
+padding: 0;
+font-family: 'Poppins', sans-serif;
+background: url("../images/body_bg.png") no-repeat;
+background-size:cover;
+}
+h1,h2,h3,h4,h5,h6, p, ul, li , a{
+    margin: 0;
+    padding: 0;
+}
+
+
+.navbar-icon {
+    display: none;
+}
+.navbar-icon {
+    width: 28px;
+    height: 18px;
+    cursor: pointer; /* Comment this when use on Tablets/Smartphones */
+    position: relative;
+}
+.navbar-icon span {
+    position: absolute;
+    background: #222;
+    width: 100%;
+    height: 20%;
+    transition: .2s .2s top, .2s .2s bottom, .1s transform;
+    border-radius: 100px;
+    right: 0;
+}
+.navbar-icon span:nth-of-type(1) {
+    top: 0;
+}
+.navbar-icon span:nth-of-type(2) {
+    top: 40%;
+    opacity: 1;
+    transition: opacity .1s .2s;
+}
+.navbar-icon span:nth-of-type(3) {
+    bottom: 0;
+}
+
+/* Animation */
+.close span {
+    transition: .2s top, .2s bottom, .2s .2s transform;
+}
+.close span:nth-of-type(1) {
+    top: 40%;
+    transform: rotate(45deg);
+}
+.close span:nth-of-type(2) {
+    opacity: 0;
+    transition: opacity .1s .2s;
+}
+.close span:nth-of-type(3) {
+    bottom: 44%;
+    transform: rotate(-45deg);
+}
+
+
+.header-main-block {
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
+    padding: 15px 0;
+    background-color: #1b1b1b;
+    -webkit-transition: -webkit-box-shadow 0.2s ease;
+    transition: -webkit-box-shadow 0.2s ease;
+    -o-transition: box-shadow 0.2s ease;
+    transition: box-shadow 0.2s ease;
+    transition: box-shadow 0.2s ease, -webkit-box-shadow 0.2s ease;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    position: relative;
+    left:0;
+    top:0;
+    z-index: 999;
+}
+
+.header-main-block.fixed{
+    position: fixed;
+    top:0;
+    padding:8px 0;
+}
+.delos_logo{
+    width:250px;
+    display: flex;
+    justify-content: flex-start;
+    transition: 0.2s ease-in-out;
+}
+.delos_logo img{
+    width: 100%;
+}
+.header-main-block.fixed .logo{ width:220px; }
+
+.header-inner-block{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navigation-main ul{ display: flex; align-items: center; }
+.navigation-main ul li{list-style: none;padding: 0 15px;}
+.navigation-main ul li a{ font-size: 16px; color: #fff; font-family: 'Raleway', sans-serif; position: relative;}
+.navigation-main ul li a.active{
+    font-weight: 600;
+}
+.navigation-main ul li a:hover{text-decoration: none;}
+.navigation-main ul li a:after{
+    position: absolute;
+    content: "";
+    height:2px;
+    width:100%;
+    left:0;
+    bottom: -15px;
+    background:#6a2b21;
+    opacity: 0;
+    transition: 0.2s ease-in-out;
+}
+.navigation-main ul li a:hover:after,
+.navigation-main ul li a.active:after{
+    opacity: 1;
+    bottom:-10px;
+}
+
+
+
+
+.container{
+    max-width: 1170px;
+    margin: auto;
+}
+.cs_header{
+    text-align: center;
+    padding: 50px 0;
+}
+.cs_header .logo{
+    display: inline-block;
+    max-width: 400px; 
+}
+.cs_header .logo img{
+    width:100%;
+}
+
+
+.herobanner_inner_ui{
+    padding:0px 0 0px;
+}
+
+.hero_content_area{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+
+}
+
+.hero_content_area .left_sec{
+    width:100%;
+    position: relative;
+    z-index: 1;
+}
+.hero_content_area .left_sec h4{
+    font-size: 76px;
+    color: #ffffff;
+    font-weight: 300;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+.hero_content_area .left_sec h4 span{
+    color:#e89932;
+    font-weight: 800;
+}
+.hero_content_area .right_sec {
+    position: relative;
+    margin-top: 50px;
+    position: absolute;
+    right: 9%;
+    top: -60px;
+    max-width: 600px;
+}
+.hero_content_area .right_sec img{
+    width: 100%;;
+}
+
+.herobanner_inner_ui .hero_img img{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    object-position: center;
+}
+.logo{
+    max-width: 350px;
+    display: inline-block;
+    margin-bottom: 40px;
+}
+.logo img{
+    width:100%;
+}
+.banner_section{
+    position:relative;
+    z-index: 1;
+    padding-bottom: 200px;
+}
+.hero_logo_sec{
+    display: flex;
+    align-items: center;
+    padding-top: 50px;
+}
+.hero_logo_sec .logo-wrap{
+    width:275px;
+}
+.hero_logo_sec .logo-wrap img{
+    width:100%;
+    @media (max-width:500px){
+        margin-left:-24px;
+    }
+}
+.hero_logo_sec .seprater {
+    display: inline-flex;
+    height: 110px;
+    margin:0 30px;
+}
+
+.herobanner_inner_ui .contnet_blk{
+    width:calc(100% - 500px);
+    text-align: center;
+    padding-top: 100px;
+}
+.herobanner_inner_ui .contnet_blk h1{
+    margin-bottom: 20px;
+    font-size: 60px;
+    font-weight: 600;
+}
+.herobanner_inner_ui .contnet_blk h1 span{
+    color: #706aff;
+}
+.herobanner_inner_ui .contnet_blk p{
+    font-size: 24px;
+    line-height: normal;
+    line-height: 30px;
+    font-weight: 400;
+}
+.herobanner_inner_ui .inner_content{
+    /* background: #e7e7f9; */
+    padding: 40px 0;
+}
+
+.benfit_bg{
+    border-radius: 12px;
+    background:url(../images/benefits_bg.png) no-repeat;
+    padding: 85px;
+    background-size: 100%;
+
+}
+
+.coming_soon_wrapper{
+    padding-bottom: 100px;
+    @media (max-width:767px){
+        padding-bottom:30px;
+    }
+}
+
+.coming_soon_wrapper h3{
+    font-size: 40px;
+    color: #ffffff;
+    font-weight: 600;
+    margin-bottom: 70px;
+    @media (max-width:767px){
+        font-size:30px;
+    }
+}
+.coming_soon_wrapper .logo_wrapper{
+    display: flex;
+    gap:50px;
+}
+.coming_soon_wrapper .logo_wrapper .logo_img{
+    width: 40%;
+    align-items: center;
+    display: inline-flex;
+}
+.coming_soon_wrapper .logo_wrapper .logo_img img{
+    width: 100%;
+}
+
+.benifits_sec{
+    padding: 50px 0 150px;
+    @media (max-width:767px){
+        padding: 0px 0 70px;
+    }
+}
+.benifits_sec .title_wrapper{
+    width: 80%;
+    padding-bottom: 80px;
+}
+.benifits_sec .title_wrapper h3{
+        font-size: 40px;
+        color: #e99a30;
+        font-weight: 700;
+        font-family: "Plus Jakarta Sans", sans-serif;
+        margin-bottom: 10px;
+        @media (max-width:767px){
+            font-size: 36px;
+        }
+}
+.benifits_sec .title_wrapper p{
+        font-size: 30px;
+        line-height: 54px;
+        color: #ffffff;
+        font-weight: 400;
+        font-family: "Plus Jakarta Sans", sans-serif;
+}
+.benifits_sec .heading_wrap{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 80px;
+}
+.benifits_sec .heading_wrap:after{
+    position: absolute;
+    content: "";
+    height: 3px;
+    width:100%;
+    background: #1e2326;
+    top:50%;
+    transform: translateY(-50%);
+    left: 0;
+    z-index: -1;
+}
+.benifits_sec .heading_wrap h3{
+    display: inline-flex;
+    padding: 16px 50px;
+    background:#706aff;
+    color: #fff;
+    border-radius:50px;
+    font-size: 52px;
+    font-weight: 700;
+}
+
+.benifits_card{
+    text-align: center;
+}
+.benifits_card figure{
+    width:112px;
+    height:120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 24px;
+}
+.benifits_card figure img{
+    width:100%;
+}
+.instant_title{
+        background: url(../images/benifts_title_bg.png) no-repeat;
+        display: inline-flex;
+        width: auto;
+        background-size: 100%;
+        padding: 24px 60px 22px;
+        font-size: 30px;
+        color: #ffffff;
+        font-weight: 600;
+        position: relative;
+        top: 43px;
+        z-index: -1;
+        left: -13px;
+        height: 119px;
+
+}
+.benifits_card .content_ui p{
+    font-size: 24px;
+    line-height: 36px;
+    color: #ffffff;
+    font-weight: 300;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    text-align: center;
+
+}
+
+.workforce_sec{
+    padding: 40px 0 100px;
+}
+.workforce_card_wrap{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.workforce_card{
+    width:25%;
+    max-width: 230px;
+    position: relative;
+}
+.workforce_card:first-child figure:after,
+.workforce_card:nth-child(3) figure:after{
+    background: url("../images/arrow.png") no-repeat;
+    background-size: 100%;
+    position: absolute;
+    content: "";
+    right: -197px;
+    bottom: 0;
+    width: 235px;
+    height: 100px;
+    z-index: -1;
+    
+}
+.workforce_card:nth-child(2) figure:after,
+.workforce_card:nth-child(4) figure:after{
+    background: url("../images/arrow.png") no-repeat;
+    background-size: 100%;
+    position: absolute;
+    content: "";
+    right: -197px;
+    bottom: 0;
+    width: 235px;
+    height: 100px;
+    z-index: -1;
+}
+.workforce_card:nth-child(4) figure:after{
+    display: none;
+}
+.workforce_sec .heading_wrap{
+    margin-bottom:60px;
+}
+
+.workforce_sec .heading_wrap h3{
+    text-align: center;
+    color: #fff;
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.workforce_card figure{
+    width:190px;
+    background:#927cb8;
+    height:190px;
+    border-radius: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 1px solid #c6c4ff;
+    z-index: 1;
+}
+.workforce_card .image_wrap{
+    width:186px;
+    height:186px;
+    border-radius: 100%;
+    padding: 0px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 2px 5px #927cb8;
+}
+.workforce_card .image_wrap img{
+    width:186px;
+    height: 186px;
+    border-radius: 100%;
+}
+
+.workforce_card .content_blk{
+    text-align: left;
+    margin-top: 40px
+}
+
+.workforce_card .content_blk h5{
+   
+    color:#e99a30;
+    font-weight: 400;
+    margin-bottom: 20px;
+    font-size: 22px;
+    line-height: 32px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.workforce_card .content_blk p{
+    font-size: 20px;
+    color:rgba(255,255,255,0.8);
+    line-height: 30px;
+    font-weight: 300;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.meta_services_sec{
+    padding:140px 0 0;
+}
+.meta_services_card{
+    display: flex;
+    align-items: center;
+    gap:50px;
+    margin-bottom: 30px;
+    @media (max-width:599px){
+        flex-direction:column;
+        margin-bottom: 70px;
+        gap:30px;
+        text-align:center;
+    }
+}
+.meta_services_card:last-child{
+    @media (max-width:599px){
+        margin-bottom:0;
+    }
+}
+.meta_services_card .icon{
+    width: 80px;
+    min-width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.meta_services_card .icon img{ 
+    width: 100%;
+}
+.meta_services_card .content_ui label{
+    font-size: 22px;
+    line-height: 41px;
+    color: #e99a30;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.meta_services_card .content_ui p{
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: 400;
+    @media (max-width:767px){
+        font-size:16px;
+    }
+}
+
+.cs_footer{
+    padding: 40px 0 0;
+}
+.cs_footer .btn_wrap{
+    text-align: center;
+}
+.cs_footer .download_btn{
+    padding: 10px 40px;
+    background:#706aff;
+    color: #fff;
+    border-radius:40px;
+    font-size: 30px;
+    font-weight: 700;
+    border: none;
+    min-width: 300px;
+    transition: 0.2s ease-in-out;
+}
+.cs_footer .download_btn:hover{
+    opacity: 0.8;
+}
+
+.cs_footer p{
+    color: #000000;
+    margin-top: 30px;
+    font-weight: 600;
+    text-align: center;
+    font-size: 42px;
+    color: #000000;
+    font-weight: 600;
+}
+
+.chat_ui{
+    width:100%;
+    position: relative;
+}
+.chat_ui  .wrapper:after{
+    position: absolute;
+    content: "";
+    background: url(../images/ic_msg.png) no-repeat;
+    width: 250px;
+    height: 250px;
+    background-size: 100%;
+    left:-12%;
+    bottom:30%;
+    display: none;
+}
+.chat_ui .wrapper {
+    border-radius: 84px;
+    background-color:rgba(255,255,255,0.102);
+    border: 1px solid rgba(255,255,255,0.102);
+    padding:40px 60px;
+    box-shadow: 0 0px 5px 4px #927cb8;
+    position: relative;
+}
+.chat_ui .wrapper .title{
+    font-size: 60px;
+    color: #ffffff;
+    font-weight: 400;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.chat_ui .wrapper .title span{
+    font-weight: 700;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    color:#ea9b32;
+    display: block;
+    @media (max-width:767px){
+        display:inline;
+    }
+}
+
+
+.contact_form{
+    padding: 80px 0 200px;
+    margin-top:0px;
+}
+.contact_form h4{
+    text-align: center;
+    color: #fff;
+    font-size: 40px;
+    line-height: 52px;
+    color: #ffffff;
+    font-weight: 700;
+    text-align: center;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    margin-bottom: 60px;
+    text-shadow: -1px 2px 6px #927cb8, 2px 2px 5px #927cb8;
+}
+.contact_form .form_block {
+	padding: 50px;
+	max-width: 900px;
+	margin: auto;
+	background: #fff;
+	border-radius: 13px;
+    border-radius: 52px;
+    background-color: #ffffff;
+    border: 1px solid #a2a2a2;
+    box-shadow: 0 0px 5px 4px #927cb8;
+    position: relative;
+}
+.contact_form .form_block:after{
+    position: absolute;
+    content: "";
+    bottom: -140px;
+    width: 200px;
+    height: 200px;
+    right: 12px;
+    background: url(../images/chat_icon.svg) no-repeat;
+    background-size: 100%;
+    display: none;
+}
+
+.form_block .form-group label{
+    font-size: 16px;
+    color: #fff;
+    display: block;
+
+}
+.form_block .form-group input, .form_block .form-group textarea {
+	width: 100%;
+	height: 48px;
+	border-radius: 8px;
+	border: none;
+	padding: 0 16px;
+	font-size: 16px;
+	background: rgba(255,255,255,0.9);
+	border: 1px solid #a2a2a2;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+.form_block .form-group{
+    margin-bottom: 24px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+.form_block .form-group input,
+.form_block .form-group textarea:focus{
+    box-shadow: none;
+    outline: none;
+}
+.form_block .form-group textarea {
+	height: 193px;
+	padding: 10px;
+    resize: none;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.submit_btn{
+    background: #706aff;
+border: none;
+padding: 10px 30px;
+height: 48px;
+border-radius: 30px;
+color: #fff;
+font-size: 18px;
+font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+@media (max-width:1199px){
+    .herobanner_inner_ui .contnet_blk{
+        padding-top: 70px;
+    }
+    .herobanner_inner_ui .contnet_blk h1{
+        font-size: 48px;
+    }
+    .herobanner_inner_ui .contnet_blk p{
+        font-size: 20px;
+    }
+    .benifits_card .content_ui p{
+        font-size: 24px;
+        line-height: 32px;
+    }
+    .benifits_sec .heading_wrap h3{
+        font-size: 36px;
+    }
+
+    .hero_content_area .left_sec h4{
+        font-size: 64px;
+    }
+    .hero_content_area .left_sec{
+        width: 100%;
+    }
+    .hero_content_area .right_sec{
+        margin-left: 0;
+    }
+    .workforce_card:first-child figure:after, .workforce_card:nth-child(3) figure:after,
+    .workforce_card:nth-child(2) figure:after, .workforce_card:nth-child(4) figure:after{
+        display: none;
+    }
+}
+
+@media (max-width:991px){
+    .banner_section{
+        padding-bottom:0px;
+    }
+    .hero_content_area {
+        flex-direction: column;
+    }
+    .hero_content_area .right_sec{
+        max-width: 600px;
+        margin-bottom: 50px;
+        position: relative;
+        right:0;
+    }
+    .benfit_bg{
+        padding-top: 50px;
+        background: #362677;
+        box-shadow: 0 1px 2px 5px #615fe1;
+        max-width: 97%;
+    }
+    .benifits_sec{
+        padding-bottom: 50px;
+    }
+
+    .benifits_card .content_ui p{
+        font-size: 20px;
+    }
+    .workforce_card figure{
+        width:170px;
+        height:170px;
+    }
+    .workforce_card .image_wrap{
+        /* width:85%;
+        height:85%; */
+        width:146px;
+        height: 146px;
+    }
+    .workforce_card .image_wrap img{
+        /* width:80%;
+        height:80%; */
+        width:146px;
+        height: 146px;
+    }
+    .workforce_card:first-child figure:after, .workforce_card:nth-child(3) figure:after,
+    .workforce_card:nth-child(2) figure:after, .workforce_card:nth-child(4) figure:after{
+        display: none;
+    }
+
+    
+    .delos_logo img{
+        width:170px;
+    }
+    .navigation-main ul li a{
+        font-size: 14px;
+    }
+    .navigation-main ul li{
+        padding: 0 7px;
+    }
+    .workforce_card:first-child figure:after, .workforce_card:nth-child(3) figure:after{
+        display: none;
+    }
+    .workforce_card figure{
+        width: 148px;
+        height: 148px;
+    }
+    .workforce_card .content_blk h5{
+        font-size: 20px;
+    }
+}
+
+@media (max-width:767px){
+
+    .hero_content_area .left_sec h4{
+        font-size: 54px;
+    }
+    .benifits_sec .title_wrapper{
+        width: 100%;
+    }
+    .workforce_card_wrap{
+        flex-wrap: wrap;
+    }
+    .benifits_sec .title_wrapper p{
+        font-size: 24px;
+        line-height: 40px;
+    }
+    .chat_ui .wrapper{
+        border-radius: 30px;
+        padding: 30px 30px;
+    }
+    .chat_ui .wrapper .title{
+        font-size: 36px;
+    }
+    .contact_form .form_block{
+        border-radius: 30px;
+    }
+    .contact_form{
+        padding-bottom: 100px;
+        margin-top: 0;
+    }
+    .workforce_sec{
+        padding-bottom: 30px;
+    }
+    .workforce_card{
+        width:50%;
+        max-width: 100%;
+        margin-bottom: 50px;
+    }
+    .workforce_card .content_blk{
+        text-align: center;
+        padding: 0 10px;
+        margin-top: 20px;
+        
+    }
+    .workforce_card .content_blk h5{
+        max-width: 100%;
+    }
+    .benifits_card {
+        margin-bottom: 50px;
+    }
+    .benifits_sec{
+        padding-bottom: 30px;
+    }
+    .cs_footer p{
+        font-size: 30px;
+    }
+    .herobanner_inner_ui .hero_img{
+        height: 300px;
+    }
+    .banner_section:after{
+        display: none;
+    }
+    .herobanner_inner_ui .contnet_blk h1{
+        font-size: 40px;
+    }
+    .herobanner_inner_ui{
+        padding-bottom:0px;
+    }
+    .benifits_sec .heading_wrap h3{
+        font-size: 30px;
+    }
+    .workforce_sec .heading_wrap h3{
+        font-size: 32px;
+    }
+
+    .navbar-icon {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        width: 28px;
+        height: 18px;
+        background: none;
+        border: none;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        margin-right:0px;
+    }
+    .navbar-icon:focus{
+        outline: none;
+        box-shadow: none;
+    }
+    .navbar-icon span {
+        width: 100%;
+        height: 2px;
+        background: #fff;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+    
+    .navigation-main ul {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+    .navigation-main ul li {
+        padding: 0 10px;
+        width: 100%;
+        text-align: left;
+        margin-bottom: 15px;
+    }
+    .block-right-header{
+        position: fixed;
+        display: block;
+        width: 76%;
+        top: 0;
+        background: #1b1b1b;
+        left: 0;
+        height: 100vh;
+        padding: 45px 15px 15px;
+        transition: 0.5s ease-in-out;
+        transform: translateX(-100%);
+        opacity: 0;
+        visibility: hidden;
+    }
+    .block-right-header.active {
+        opacity: 1;
+        transform: translateX(0);
+        visibility: visible;
+        display: block;
+    }
+    
+    .navbar-icon span:nth-of-type(2) {
+        top: 45%;
+        opacity: 1;
+        transition: opacity .1s .2s;
+    }
+    .close span:nth-of-type(1) {
+        top: 40%;
+        transform: rotate(45deg);
+    }
+    .close span:nth-of-type(2) {
+        opacity: 0;
+        transition: opacity .1s .2s;
+    }
+    .close span:nth-of-type(3) {
+        bottom: 44%;
+        transform: rotate(-45deg);
+    }
+}
+
+@media (max-width:599px){
+    .workforce_card{
+        width:100%;
+    }
+    .logo{
+        max-width: 250px;
+        margin-bottom: 0;
+    }
+
+    .herobanner_inner_ui .contnet_blk h1{
+        font-size: 32px;
+    }
+    .benifits_sec .heading_wrap h3{
+        font-size: 26px;
+    }
+    .benifits_card figure{
+        width: 80px;
+        height: auto;
+    }
+    .benfit_bg{
+        padding: 50px 30px  30px;
+    }
+    .benifits_card .content_ui p{
+        font-size: 20px;
+        line-height: 28px;
+    }
+    .herobanner_inner_ui .contnet_blk p{
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    .contact_form h4{
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 36px;
+    }
+    .contact_form .form_block{
+        padding:30px 24px;
+    }
+
+    .hero_content_area .left_sec h4{
+        font-size: 42px;
+    }
+    
+}
