@@ -1220,6 +1220,9 @@ body.chat_bg{
     color: #5d68e6;
     font-weight: 300;
 }
+.product_wrap .product_content a{
+    text-decoration: none;
+}
 .visit_wrapper{
     padding: 100px 0;
 }
