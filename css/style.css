@@ -767,6 +767,7 @@ font-family: "Plus Jakarta Sans", sans-serif;
     margin:40px 0  50px;
     transition: 0.2s ease-in-out;
     text-decoration: none;
+    display: inline-block;
 }
 .AI_inner_wrapper .btn_blk:focus{
     outline: none;
