@@ -740,14 +740,15 @@ font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .AI_inner_wrapper .title{
-    font-size: 57px;
+    font-size: 42px;
     color: #ffffff;
     font-weight: 600;
     text-align: center;
     margin-bottom: 20px;
-    align-items: center;
-    display: flex;
-    justify-content: center;
+    display: inline-block;
+}
+.AI_inner_wrapper .title span{
+    display: block;
 }
 .AI_inner_wrapper .title span{
     font-weight: normal;
@@ -757,17 +758,36 @@ font-family: "Plus Jakarta Sans", sans-serif;
 .AI_inner_wrapper .btn_blk{
     border-radius: 39px;
     background-color: #e99a30;
-    font-size:30px;
+    font-size:26px;
     color: #000000;
     font-weight:400;
     text-align: center;
     padding:10px 20px;
     border: none;
     margin:40px 0  50px;
-
+    transition: 0.2s ease-in-out;
+    text-decoration: none;
+}
+.AI_inner_wrapper .btn_blk:focus{
+    outline: none;
+    opacity: 0.8;
+}
+.AI_inner_wrapper .btn_blk:hover{
+    opacity: 0.8;
+}
+.AI_inner_wrapper.first_sec .img_ui{
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.AI_inner_wrapper.second_sec .img_ui img{
+    max-height:400px;
 }
 .AI_inner_wrapper .img_ui img{
-    width: 100%;
+    width:auto;
+    max-height:350px;
+    max-width:550px;
 }
 
 .voice_AI_wrapper {
@@ -1738,6 +1758,18 @@ body.chat_bg{
     }
     .compare_sec .desc, .customize_wrapper .heading_sec h6, .customize_wrapper .heading_sec .desc{
         font-size: 20px;
+    }
+
+    .AI_inner_wrapper .img_ui img{
+        width:100%;
+        max-height:inherit;
+        min-height: auto;
+    }
+    .AI_inner_wrapper.first_sec .img_ui{
+        min-height: auto;
+    }
+    .AI_inner_wrapper.second_sec .img_ui img{
+        min-height: auto;
     }
     
 }

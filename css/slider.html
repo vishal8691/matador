@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Snap Carousel</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+        .carousel {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+        }
+        .carousel::-webkit-scrollbar {
+            display: none;
+        }
+        .carousel-item {
+            flex: 0 0 auto;
+            width: auto;
+            min-width: 200px;
+            background: #3498db;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 1.5rem;
+            scroll-snap-align: start;
+            border-radius: 10px;
+        }
+        .nav-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            font-size: 1.5rem;
+            border-radius: 50%;
+        }
+        .prev { left: 10px; }
+        .next { right: 10px; }
+        .dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .dot {
+            width: 10px;
+            height: 10px;
+            margin: 5px;
+            background: #bbb;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .dot.active {
+            background: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="carousel-container">
+        <button class="nav-button prev">&#9665;</button>
+        <div class="carousel" id="carousel">
+            <div class="carousel-item">1</div>
+            <div class="carousel-item">2</div>
+            <div class="carousel-item">3</div>
+            <div class="carousel-item">4</div>
+            <div class="carousel-item">5</div>
+        </div>
+        <button class="nav-button next">&#9655;</button>
+    </div>
+    <div class="dots" id="dots"></div>
+    <script>
+        const carousel = document.getElementById("carousel");
+        const prevBtn = document.querySelector(".prev");
+        const nextBtn = document.querySelector(".next");
+        const dotsContainer = document.getElementById("dots");
+        
+        function updateDots() {
+            dotsContainer.innerHTML = "";
+            Array.from(carousel.children).forEach((_, index) => {
+                const dot = document.createElement("div");
+                dot.classList.add("dot");
+                if (index === 0) dot.classList.add("active");
+                dot.addEventListener("click", () => {
+                    carousel.scrollTo({ left: carousel.children[index].offsetLeft, behavior: "smooth" });
+                });
+                dotsContainer.appendChild(dot);
+            });
+        }
+        
+        function updateActiveDot() {
+            const scrollLeft = carousel.scrollLeft;
+            const items = Array.from(carousel.children);
+            items.forEach((item, index) => {
+                if (Math.abs(item.offsetLeft - scrollLeft) < item.offsetWidth / 2) {
+                    dotsContainer.querySelectorAll(".dot").forEach(dot => dot.classList.remove("active"));
+                    dotsContainer.children[index].classList.add("active");
+                }
+            });
+        }
+        
+        nextBtn.addEventListener("click", () => {
+            carousel.scrollBy({ left: carousel.clientWidth / 2, behavior: "smooth" });
+        });
+        prevBtn.addEventListener("click", () => {
+            carousel.scrollBy({ left: -carousel.clientWidth / 2, behavior: "smooth" });
+        });
+        
+        carousel.addEventListener("scroll", updateActiveDot);
+        
+        updateDots();
+    </script>
+</body>
+</html>
