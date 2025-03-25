@@ -664,6 +664,11 @@ h1,h2,h3,h4,h5,h6, p, ul, li , a{
     margin-bottom: 60px;
     text-shadow: -1px 2px 6px #927cb8, 2px 2px 5px #927cb8;
 }
+.contact_form h4 span{
+    display: block;
+    font-size: 48px;
+    margin-top: 5px;
+}
 .contact_form .form_block {
 	padding: 50px;
 	max-width: 900px;
@@ -1734,6 +1739,10 @@ body.chat_bg{
         font-weight: 600;
         line-height: 36px;
     }
+    .contact_form h4 span{
+        font-size: 28px;
+    }
+  
     .contact_form .form_block{
         padding:30px 24px;
     }
