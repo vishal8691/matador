@@ -1259,6 +1259,7 @@ body.chat_bg{
     background: transparent;
     max-width: 300px;
     margin-bottom: 50px;
+    display: inline-block;
 }
 .visit_wrapper  .btn_sec:focus,
 .visit_wrapper  .btn_sec:hover{
