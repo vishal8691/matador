@@ -1044,6 +1044,11 @@ font-family: "Plus Jakarta Sans", sans-serif;
     max-width: 80%;
     margin: auto;
 }
+@media (min-width:768px){
+    .step_list_wrapper .step_card:last-child .card_image{
+        max-width: 40%;
+    }
+}
 
 .step_list_wrapper .card_image img{ 
     width: 100%;
